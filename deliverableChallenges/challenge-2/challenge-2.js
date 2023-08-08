@@ -29,7 +29,7 @@ class ProductManager {
   // Get Products function
   getProducts = async () => {
     const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
-    console.log(products)
+    return console.log(products)
   }
 
   // Get Product By ID function
@@ -37,7 +37,7 @@ class ProductManager {
     const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
     const product = products.find(prod => prod.id === id)
 
-    product ? console.log(product) : console.log(`Product with ID: ${id} does not exist`)
+    return product ? console.log(product) : console.log(`Product with ID: ${id} does not exist`)
   }
 
   // Update Product function
